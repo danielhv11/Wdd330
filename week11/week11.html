@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authentication with JWT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      header,
+      footer {
+        background-color: rgb(243, 208, 167);
+        padding: 0.2rem;
+        text-align: center;
+        padding: 0.5rem 2%;
+        margin: auto;
+        border-radius: 15px;
+      }
+
+      main {
+        padding: 0.5rem 2%;
+        padding-bottom: 1rem;
+      }
+
+      body {
+        padding: 0.5rem 2%;
+      }
+      .errors {
+        border: 1px solid darkred;
+        background-color: lightcoral;
+        padding: 0.2em;
+      }
+      form input {
+        margin: 0.5em 0;
+        font-size: 1.2em;
+        background-color: beige;
+        width: 300px;
+      }
+      form button {
+        font-size: 1.2em;
+        padding: 0.4em;
+        margin: 1rem 0;
+        background-color: rgb(149, 180, 238);
+      }
+      input:invalid {
+        box-shadow: 0 0 5px 1px red;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>WDD330</h1>
+      <nav></nav>
+    </header>
+    <div id="errors" class="errors hidden"></div>
+    <div id="login">
+      <h2>Authentication with JWT</h2>
+      <form>
+        <div>
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            placeholder="Username"
+            value="user1@email.com"
+          />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <button type="button" class="btn btn-primary center-block">
+          Login
+        </button>
+      </form>
+      <div id="token-display"></div>
+    </div>
+
+    <div id="content" class="hidden">
+      <form name="postForm">
+        <div>
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            placeholder="title"
+            required
+          />
+        </div>
+        <div>
+          <label for="content">Content</label>
+          <input
+            type="text"
+            class="form-control"
+            name="content"
+            placeholder="content"
+            required
+          />
+        </div>
+        <div id="postError"></div>
+
+        <input type="submit" id="createSubmit" />
+      </form>
+      <ul id="list"></ul>
+    </div>
+    <script src="week11.js" type="module"></script>
+  </body>
+</html>
